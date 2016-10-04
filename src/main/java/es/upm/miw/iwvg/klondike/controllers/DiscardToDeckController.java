@@ -27,6 +27,5 @@ public class DiscardToDeckController {
 		} else {
 			io.writeln("El descarte aún tiene cartas");
 		}
-		gameView.imprimirBoard();
 	}
 }

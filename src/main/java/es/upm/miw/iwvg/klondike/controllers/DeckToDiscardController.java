@@ -28,6 +28,5 @@ public class DeckToDiscardController {
 			card.setHidden(false);
 			discard.getStackCard().push(card);
 		}
-		gameView.imprimirBoard();
 	}
 }

@@ -7,6 +7,7 @@ import es.upm.miw.iwvg.klondike.models.StackCard;
 import es.upm.miw.iwvg.klondike.models.StackDeck;
 import es.upm.miw.iwvg.klondike.models.StackLadder;
 import es.upm.miw.iwvg.klondike.models.Suit;
+import es.upm.miw.iwvg.klondike.utils.IO;
 
 public class GameView {
 
@@ -14,6 +15,7 @@ public class GameView {
 	private ArrayList<StackLadder> ladders;
 	private Hashtable<Suit,StackCard> suitStacks;
 	private StackCard discard;
+	private IO io;
 
 
 	public GameView(StackDeck deck, ArrayList<StackLadder> ladders, Hashtable<Suit,StackCard> suitStacks,
@@ -23,40 +25,41 @@ public class GameView {
 		this.ladders = ladders;
 		this.suitStacks = suitStacks;
 		this.discard = discard;
+		io = new IO();
 	}
 
 	public void board() {
 		if(deck.getStackCard().size()==0){
-			System.out.println("Baraja: []");
+			io.writeln("Baraja: []");
 		}else{
-			System.out.println("Baraja: [X,X]");
+			io.writeln("Baraja: [X,X]");
 		}
 		
 
 		System.out.println("Descarte:" + discard.toString());
 
 		for (int i = 0; i < Suit.values().length; i++) {
-			System.out.println("Palo " + Suit.values()[i] + ": " + suitStacks.get(Suit.values()[i]));
+			io.writeln("Palo " + Suit.values()[i] + ": " + suitStacks.get(Suit.values()[i]));
 		}
 
 		for (int i = 1; i <= 7; i++) {
-			System.out.println("Escalera" + i + ": " + ladders.get(i - 1).toString());
+			io.writeln("Escalera" + i + ": " + ladders.get(i - 1).toString());
 		}
 
-		System.out.println("-----------------------------");
+		io.writeln("--------------------------------------");
 	}
 
 	public void imprimirBoard() {
 		board();
-		System.out.println("1. Mover de baraja a descarte");
-		System.out.println("2. Mover de descarte a baraja");
-		System.out.println("3. Mover de descarte a palo");
-		System.out.println("4. Mover de descarte a escalera");
-		System.out.println("5. Mover de escalera a palo");
-		System.out.println("6. Mover de escalera a escalera");
-		System.out.println("7. Mover de palo a escalera");
-		System.out.println("8. Voltear en escalera");
-		System.out.println("9. Salir");
+		io.writeln("1. Mover de baraja a descarte");
+		io.writeln("2. Mover de descarte a baraja");
+		io.writeln("3. Mover de descarte a palo");
+		io.writeln("4. Mover de descarte a escalera");
+		io.writeln("5. Mover de escalera a palo");
+		io.writeln("6. Mover de escalera a escalera");
+		io.writeln("7. Mover de palo a escalera");
+		io.writeln("8. Voltear en escalera");
+		io.writeln("9. Salir");
 
 	}
 

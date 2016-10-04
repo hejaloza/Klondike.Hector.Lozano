@@ -9,20 +9,20 @@ import es.upm.miw.iwvg.klondike.utils.IO;
 import es.upm.miw.iwvg.klondike.views.GameView;
 
 public class DiscardToLadderController {
-	
+
 	private StackCard discard;
 	private ArrayList<StackLadder> ladders;
 	private GameView gameView;
 	private IO io;
-	
-	public DiscardToLadderController(StackCard discard,ArrayList<StackLadder> ladders, GameView gameView){
-		this.discard=discard;
-		this.ladders=ladders;
+
+	public DiscardToLadderController(StackCard discard, ArrayList<StackLadder> ladders, GameView gameView) {
+		this.discard = discard;
+		this.ladders = ladders;
 		this.gameView = gameView;
 		io = new IO();
 	}
 
-	public void execute(){
+	public void execute() {
 		if (discard.getStackCard().isEmpty()) {
 			io.writeln("El descarte esta vacio");
 		} else {
@@ -46,6 +46,5 @@ public class DiscardToLadderController {
 				}
 			}
 		}
-		gameView.imprimirBoard();
 	}
 }

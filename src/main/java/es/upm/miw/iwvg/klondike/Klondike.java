@@ -37,20 +37,28 @@ public class Klondike {
 			int opcion = io.readInt("Opcion= [1-9]:");
 			if (opcion == 1) {
 				new DeckToDiscardController(game.getDiscard(), game.getDeck(), gameView).execute();
+				gameView.imprimirBoard();
 			} else if (opcion == 2) {
 				new DiscardToDeckController(game.getDiscard(), game.getDeck(), gameView).execute();
+				gameView.imprimirBoard();
 			} else if (opcion == 3) {
 				new DiscardToSuitController(game.getDiscard(), game.getSuitStacks(), gameView).execute();
+				gameView.imprimirBoard();
 			} else if (opcion == 4) {
 				new DiscardToLadderController(game.getDiscard(), game.getLadders(), gameView).execute();
+				gameView.imprimirBoard();
 			} else if (opcion == 5) {
 				new LadderToSuitController(game.getLadders(), game.getSuitStacks(), gameView).execute();
+				gameView.imprimirBoard();
 			} else if (opcion == 6) {
 				new LadderToLadderController(game.getLadders(), gameView).execute();
+				gameView.imprimirBoard();
 			} else if (opcion == 7) {
 				new SuitToLadderController(game.getLadders(), game.getSuitStacks(), gameView).execute();
+				gameView.imprimirBoard();
 			} else if (opcion == 8) {
 				new FlipCardController(game.getLadders(), gameView).execute();
+				gameView.imprimirBoard();
 			}
 		} while (!ok);
 	}
