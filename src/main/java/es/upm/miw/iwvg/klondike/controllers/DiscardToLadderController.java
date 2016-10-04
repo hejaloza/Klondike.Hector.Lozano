@@ -6,19 +6,16 @@ import es.upm.miw.iwvg.klondike.models.Card;
 import es.upm.miw.iwvg.klondike.models.StackCard;
 import es.upm.miw.iwvg.klondike.models.StackLadder;
 import es.upm.miw.iwvg.klondike.utils.IO;
-import es.upm.miw.iwvg.klondike.views.GameView;
 
 public class DiscardToLadderController {
 
 	private StackCard discard;
 	private ArrayList<StackLadder> ladders;
-	private GameView gameView;
 	private IO io;
 
-	public DiscardToLadderController(StackCard discard, ArrayList<StackLadder> ladders, GameView gameView) {
+	public DiscardToLadderController(StackCard discard, ArrayList<StackLadder> ladders) {
 		this.discard = discard;
 		this.ladders = ladders;
-		this.gameView = gameView;
 		io = new IO();
 	}
 

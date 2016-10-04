@@ -5,17 +5,14 @@ import java.util.ArrayList;
 import es.upm.miw.iwvg.klondike.models.StackCard;
 import es.upm.miw.iwvg.klondike.models.StackLadder;
 import es.upm.miw.iwvg.klondike.utils.IO;
-import es.upm.miw.iwvg.klondike.views.GameView;
 
 public class LadderToLadderController {
 
 	private ArrayList<StackLadder> ladders;
-	private GameView gameView;
 	private IO io;
 
-	public LadderToLadderController(ArrayList<StackLadder> ladders, GameView gameView) {
+	public LadderToLadderController(ArrayList<StackLadder> ladders) {
 		this.ladders = ladders;
-		this.gameView = gameView;
 		io = new IO();
 	}
 

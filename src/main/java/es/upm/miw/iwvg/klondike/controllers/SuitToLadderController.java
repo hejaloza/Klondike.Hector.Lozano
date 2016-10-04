@@ -8,20 +8,16 @@ import es.upm.miw.iwvg.klondike.models.StackCard;
 import es.upm.miw.iwvg.klondike.models.StackLadder;
 import es.upm.miw.iwvg.klondike.models.Suit;
 import es.upm.miw.iwvg.klondike.utils.IO;
-import es.upm.miw.iwvg.klondike.views.GameView;
 
 public class SuitToLadderController {
 
 	private ArrayList<StackLadder> ladders;
 	private Hashtable<Suit, StackCard> suitStacks;
-	private GameView gameView;
 	private IO io;
 
-	public SuitToLadderController(ArrayList<StackLadder> ladders, Hashtable<Suit, StackCard> suitStacks,
-			GameView gameView) {
+	public SuitToLadderController(ArrayList<StackLadder> ladders, Hashtable<Suit, StackCard> suitStacks) {
 
 		this.ladders = ladders;
-		this.gameView = gameView;
 		this.suitStacks = suitStacks;
 		io = new IO();
 	}

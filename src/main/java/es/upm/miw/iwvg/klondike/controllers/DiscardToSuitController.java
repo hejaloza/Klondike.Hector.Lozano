@@ -6,19 +6,16 @@ import es.upm.miw.iwvg.klondike.models.Card;
 import es.upm.miw.iwvg.klondike.models.StackCard;
 import es.upm.miw.iwvg.klondike.models.Suit;
 import es.upm.miw.iwvg.klondike.utils.IO;
-import es.upm.miw.iwvg.klondike.views.GameView;
 
 public class DiscardToSuitController {
 
 	private StackCard discard;
 	private Hashtable<Suit, StackCard> suitStacks;
-	private GameView gameView;
 	private IO io;
 
-	public DiscardToSuitController(StackCard discard, Hashtable<Suit, StackCard> suitStacks, GameView gameView) {
+	public DiscardToSuitController(StackCard discard, Hashtable<Suit, StackCard> suitStacks) {
 		this.discard = discard;
 		this.suitStacks = suitStacks;
-		this.gameView = gameView;
 		io = new IO();
 	}
 

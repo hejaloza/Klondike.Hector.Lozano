@@ -13,12 +13,11 @@ public class GameView {
 
 	private StackDeck deck;
 	private ArrayList<StackLadder> ladders;
-	private Hashtable<Suit,StackCard> suitStacks;
+	private Hashtable<Suit, StackCard> suitStacks;
 	private StackCard discard;
 	private IO io;
 
-
-	public GameView(StackDeck deck, ArrayList<StackLadder> ladders, Hashtable<Suit,StackCard> suitStacks,
+	public GameView(StackDeck deck, ArrayList<StackLadder> ladders, Hashtable<Suit, StackCard> suitStacks,
 			StackCard discard) {
 
 		this.deck = deck;
@@ -29,14 +28,13 @@ public class GameView {
 	}
 
 	public void board() {
-		if(deck.getStackCard().size()==0){
+		if (deck.getStackCard().size() == 0) {
 			io.writeln("Baraja: []");
-		}else{
+		} else {
 			io.writeln("Baraja: [X,X]");
 		}
-		
 
-		System.out.println("Descarte:" + discard.toString());
+		io.writeln("Descarte:" + discard.toString());
 
 		for (int i = 0; i < Suit.values().length; i++) {
 			io.writeln("Palo " + Suit.values()[i] + ": " + suitStacks.get(Suit.values()[i]));
@@ -46,11 +44,11 @@ public class GameView {
 			io.writeln("Escalera" + i + ": " + ladders.get(i - 1).toString());
 		}
 
-		io.writeln("--------------------------------------");
 	}
 
 	public void imprimirBoard() {
 		board();
+		io.writeln("========================================");
 		io.writeln("1. Mover de baraja a descarte");
 		io.writeln("2. Mover de descarte a baraja");
 		io.writeln("3. Mover de descarte a palo");
@@ -60,6 +58,7 @@ public class GameView {
 		io.writeln("7. Mover de palo a escalera");
 		io.writeln("8. Voltear en escalera");
 		io.writeln("9. Salir");
+		io.writeln("========================================");
 
 	}
 
