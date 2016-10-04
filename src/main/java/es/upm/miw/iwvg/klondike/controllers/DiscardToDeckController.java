@@ -21,11 +21,11 @@ public class DiscardToDeckController {
 
 	public void execute() {
 		if (discard.getStackCard().isEmpty()) {
-			io.writeln("El descarte está vacío");
-		} else {
 			while (discard.getStackCard().size() != 0) {
 				deck.getStackCard().push(discard.getStackCard().pop());
 			}
+		} else {
+			io.writeln("El descarte aún tiene cartas");
 		}
 		gameView.imprimirBoard();
 	}
