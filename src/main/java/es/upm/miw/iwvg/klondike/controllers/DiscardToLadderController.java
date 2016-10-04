@@ -12,6 +12,7 @@ public class DiscardToLadderController {
 	private StackCard discard;
 	private ArrayList<StackLadder> ladders;
 	private IO io;
+	static final int valueKingCard=13;
 
 	public DiscardToLadderController(StackCard discard, ArrayList<StackLadder> ladders) {
 		this.discard = discard;
@@ -28,7 +29,7 @@ public class DiscardToLadderController {
 			int discardValue = discardCard.getNumber().getCardValue();
 			StackLadder escalera = ladders.get(fromLadder - 1);
 			if (escalera.getStackCard().isEmpty()) {
-				if (discardValue == 13) {
+				if (discardValue == valueKingCard) {
 					escalera.getStackCard().push(discard.getStackCard().pop());
 				} else {
 					io.writeln("La carta no corresponde");
